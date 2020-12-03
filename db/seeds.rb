@@ -142,7 +142,9 @@ puts "creating jobs"
   years_experience: rand(1..5),
   company: [ssense, metrio, element_ai, ubisoft, absolunet, alithya].sample
   )
+end
 
+3.times do
   back_end_developper_ssense = Job.create!(
   title: "Back-end developer",
   description: "<p>We are looking for an analytical, results-driven Back-end Developer
@@ -188,7 +190,9 @@ puts "creating jobs"
   years_experience: rand(1..5),
   company: [ssense, metrio, element_ai, ubisoft, absolunet, alithya].sample
   )
+end
 
+1.times do
   product_owner_alithya = Job.create!(
   title: "Product Owner",
   description: "<p>We are looking for a dedicated Product Director to be the point
@@ -232,7 +236,9 @@ puts "creating jobs"
   years_experience: rand(1..5),
   company: [ssense, metrio, element_ai, ubisoft, absolunet, alithya].sample
   )
+end
 
+2.times do
   web_designer_metrio = Job.create!(
   title: "Web Designer",
   description: "<p>We are looking for a Web Designer who will be responsible for
@@ -284,7 +290,9 @@ puts "creating jobs"
   years_experience: rand(1..5),
   company: [ssense, metrio, element_ai, ubisoft, absolunet, alithya].sample
   )
+end
 
+3.times do
   data_analyst_element_ai = Job.create!(
   title: "Data Analyst",
   description: "<p>We are looking to hire a Data Analyst to join our data team.
@@ -332,8 +340,10 @@ puts "creating jobs"
   years_experience: rand(1..5),
   company: [ssense, metrio, element_ai, ubisoft, absolunet, alithya].sample
   )
+end
 
-  project_manager_ubisoft = Job.create!(
+1.times do
+ project_manager_ubisoft = Job.create!(
   title: "Project Manager",
   description: "<p>We are looking for a Project Manager to be responsible for
   handling our company's ongoing projects. You will be working closely with your
