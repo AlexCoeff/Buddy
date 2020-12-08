@@ -39,6 +39,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initAutocomplete();
   removeIsValid();
+
   initConversationCable();
+
 });
 
