@@ -1,24 +1,12 @@
 <div class="container-messages">
-
-  <h1>Connected to <%= @chat_with_user.first_name %></h1>
+  <h1>Connected to <%= link_to @chat_with_user.first_name, profile_path(@chat_with_user), class: "name_profile_show"%></h1>
+  <div id="message-auto" data-conversation-id="<%= @conversation.id %>">
 
     <%  @messages.each do |message| %>
-
-      <% if message.user_id == current_user.id %>
-
-        <div class="message-bubble">
-          <p> <strong>You:</strong>  <%= message.content %></p>
-        </div>
-
-      <% else %>
-
-       <div class="message-bubble-other">
-         <p> <strong><%= @chat_with_user.first_name %>:</strong>  <%= message.content %></p>
-        </div>
-
-      <% end %>
+      <%= render partial: "messages/message", locals: {message: message} %>
     <% end %>
-</div>
+  </div>
+
 
   <div class="container-message-edit">
     <%= simple_form_for([@conversation, @message], html: { autocomplete: 'off' }  )do |f| %>
@@ -29,6 +17,9 @@
       <% end %>
     <% end %>
   </div>
+</div>
+
+
 
 
 
