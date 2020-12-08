@@ -324,8 +324,10 @@ front_end_developper_lightspeed = Job.create!(
   years_experience: rand(1..5),
   company: lightspeed
   )
+end
 
-4.times do
+
+3.times do
   back_end_developper = Job.create!(
   title: "Back-end developer",
   description: "<p>We are looking for an analytical, results-driven Back-end Developer
@@ -373,6 +375,8 @@ front_end_developper_lightspeed = Job.create!(
   )
 end
 
+
+1.times do
 back_end_developper = Job.create!(
   title: "Back-end developer",
   description: "<p>We are looking for an analytical, results-driven Back-end Developer
@@ -520,7 +524,7 @@ end
 end
 
 4.times do
-  data_analyst_element_ai = Job.create!(
+  data_analyst = Job.create!(
   title: "Data Analyst",
   description: "<p>We are looking to hire a Data Analyst to join our data team.
   You will take responsibility for managing our master data set, developing reports,
@@ -570,7 +574,7 @@ end
 end
 
 1.times do
-  project_manager = Job.create!(
+ project_manager_ubisoft = Job.create!(
   title: "Project Manager",
   description: "<p>We are looking for a Project Manager to be responsible for
   handling our company's ongoing projects. You will be working closely with your
