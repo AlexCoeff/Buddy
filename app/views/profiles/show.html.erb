@@ -10,17 +10,8 @@
     <h2 class="head"><i class="fas fa-user-circle"></i> <strong><%= @user.first_name %> <%= @user.last_name %></strong></h2>
   <% end %>
 
-  <div class="form-row">
-    <div class="col">
-      <h2><strong><%= Job.all.count %></strong> Job opp</h2>
-    </div>
-    <div class="col" id="col-contact">
-      <h2><strong><%= Contact.all.count %></strong> Contacts</h2>
-    </div>
-  </div>
-
   <% if @user.background.nil? || @user.background == ""%>
-    <h4><i class="fas fa-user-md"></i> add your background</h4>
+    <h4><i class="fas fa-user-md"></i> Add your background</h4>
     <% else %>
     <h2><i class="fas fa-user-md"></i> <%= @user.background %></h2>
   <% end %>
@@ -32,13 +23,13 @@
   <% end %>
 
   <% if @user.diploma.nil? || @user.diploma == ""%>
-    <h4><i class="fas fa-user-graduate"></i> add your diploma</h4>
+    <h4><i class="fas fa-user-graduate"></i> Add your diploma</h4>
     <% else %>
     <h2><i class="fas fa-user-graduate"></i> <%= @user.diploma %></h2>
   <% end %>
 
   <% if @user.field_of_studies.nil? || @user.field_of_studies == ""%>
-  <h4><i class="fas fa-book-reader"></i> Select your feild of your studies</h4>
+  <h4><i class="fas fa-book-reader"></i> Select your field of studies</h4>
     <% else %>
     <h2><i class="fas fa-book-reader"></i> <%= @user.field_of_studies %></h2>
   <% end %>
@@ -63,7 +54,7 @@
   <% end %>
 
   <% if @user.city_address.nil? || @user.city_address == ""%>
-    <h4><i class="fas fa-map-marker-alt"></i> add your address</h4>
+    <h4><i class="fas fa-map-marker-alt"></i> Add your address</h4>
     <% else %>
     <h2><i class="fas fa-map-marker-alt"></i> <%= @user.city_address %> <%= @user.country_select %></h2>
   <% end %>
@@ -72,7 +63,7 @@
 <% if policy(@user).user_owns_profile? %>
   <div class="container-priority">
     <a class="button-edit" href="/profiles/edit"><i class="fas fa-edit fa-lg"></i></a>
-    <h2 class="head"><strong>All Priorities</strong></h2>
+    <h2 class="head"><strong>Job Search Priorities</strong></h2>
     <% @user.priorities.order(position: :asc).each do |priority| %>
       <div class="priority_<%= priority.position %>">
         <h1>Priority n°<%= priority.position %></h1>
@@ -85,5 +76,4 @@
 <% end %>
 
 
-
-
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure to log out?" }, class: "btn-profile" %>
